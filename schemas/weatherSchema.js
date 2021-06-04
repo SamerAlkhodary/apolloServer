@@ -1,5 +1,5 @@
- const  WeatherSchema={
-     types:`
+const WeatherSchema = {
+    types: `
      type Coordinates{
              lon: Float
              lat:Float
@@ -23,26 +23,26 @@
              weather: [Weather]!
          }
          `
-         ,
-         queries:`
+    ,
+    queries: `
          weatherCity(city: String!): WeatherResponse
          weatherCoords(lat: Float!, lon: Float!):WeatherResponse
          `
 }
- const WeatherResolvers={
-    Query:{
-        weatherCity:(_,{city},{dataSources})=>{
-             return dataSources.weatherSource.getCity(city);
+const WeatherResolvers = {
+    Query: {
+        weatherCity: (_, { city }, { dataSources }) => {
+            return dataSources.weatherSource.getCity(city);
         },
-        weatherCoords:(_,{lat,lon},{dataSources})=>{
-             return dataSources.weatherSource.getCoords(lat,lon);
+        weatherCoords: (_, { lat, lon }, { dataSources }) => {
+            return dataSources.weatherSource.getCoords(lat, lon);
         }
     },
-    mutation:{
+    mutation: {
 
     }
 }
-module.exports={
-    weatherSchema:WeatherSchema,
+module.exports = {
+    weatherSchema: WeatherSchema,
     weatherResolver: WeatherResolvers
 };

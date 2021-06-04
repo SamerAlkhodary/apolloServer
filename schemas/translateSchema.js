@@ -1,5 +1,5 @@
- const  TranslateSchema={
-     types:`
+const TranslateSchema = {
+    types: `
     
      type Translation{
          translatedText: String!
@@ -9,24 +9,24 @@
              translations:[Translation]
          }
          `
-         ,
-         queries:`
+    ,
+    queries: `
          translate(text: String!,from:String!,to:String!): TranslateResponse
          
          `
 }
- const TranslateResolvers={
-    Query:{
-        translate:(_,{text,from,to},{dataSources})=>{
-             return dataSources.translateSource.translate(text,from,to);
+const TranslateResolvers = {
+    Query: {
+        translate: (_, { text, from, to }, { dataSources }) => {
+            return dataSources.translateSource.translate(text, from, to);
         },
-       
+
     },
-    mutation:{
+    mutation: {
 
     }
 }
-module.exports={
-    translateSchema:TranslateSchema,
+module.exports = {
+    translateSchema: TranslateSchema,
     translateResolver: TranslateResolvers
 };
