@@ -20,7 +20,8 @@ const resolvers={
   Query:
     Object.assign(
       schemas.weather.weatherResolver.Query,
-      schemas.translate.translateResolver.Query)
+      schemas.translate.translateResolver.Query
+      )
   
 
 
