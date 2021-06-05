@@ -18,12 +18,13 @@ const MixSchema = {
 const MixResolvers = {
     Query: {
         mixData: async(_, { id,text, from, to,city }, { dataSources,header }) => {
-            const translation= await dataSources.translateSource.translate(text, from, to);
+            //const translation= await dataSources.translateSource.translate(text, from, to);
             const weather = await dataSources.weatherSource.getCity(city);
             const user = await dataSources.userSource.getUser(id);
             return {
-                translation:translation.translations[0].translatedText,
+               // translation:translation.translations[0].translatedText,
                 name: user?.users[0].name,
+                translation:"hi",
                 temp: weather?.main.temp,
             }
         },
@@ -34,6 +35,6 @@ const MixResolvers = {
     }
 }
 module.exports = {
-    mixSchema: MixSchema,
-    mixResolver: MixResolvers
+    schema: MixSchema,
+    resolvers: MixResolvers
 };

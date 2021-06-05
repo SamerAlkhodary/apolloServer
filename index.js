@@ -3,22 +3,22 @@ const schemas = require('./schemas');
 const { ApolloServer, gql } = require('apollo-server');
 const typeDefs = gql`
 
-  ${schemas.weather.weatherSchema.types}
-  ${schemas.translate.translateSchema.types}
-  ${schemas.user.userSchema.types}
-  ${schemas.mix.mixSchema.types}
+  ${schemas.weather.schema.types}
+  ${schemas.translate.schema.types}
+  ${schemas.user.schema.types}
+  ${schemas.mix.schema.types}
 
 
   type Query {
 
-    ${schemas.weather.weatherSchema.queries}
-    ${schemas.translate.translateSchema.queries}
-    ${schemas.user.userSchema.queries}
-    ${schemas.mix.mixSchema.queries}
+    ${schemas.weather.schema.queries}
+    ${schemas.translate.schema.queries}
+    ${schemas.user.schema.queries}
+    ${schemas.mix.schema.queries}
   }
   type Mutation {
 
-    ${schemas.user.userSchema.mutations}
+    ${schemas.user.schema.mutations}
 
   }
 `;
@@ -27,14 +27,14 @@ const context=({req})=>{ return {header:req.headers}};
 const resolvers = {
   Query:
     Object.assign(
-      schemas.weather.weatherResolver.Query,
-      schemas.translate.translateResolver.Query,
-      schemas.user.userResolver.Query,
-      schemas.mix.mixResolver.Query,
+      schemas.weather.resolvers.Query,
+      schemas.translate.resolvers.Query,
+      schemas.user.resolvers.Query,
+      schemas.mix.resolvers.Query,
     ),
   Mutation: 
   Object.assign(
-    schemas.user.userResolver.Mutation
+    schemas.user.resolvers.Mutation
   )
 }
 const server = new ApolloServer({ 

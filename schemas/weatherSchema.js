@@ -43,6 +43,6 @@ const WeatherResolvers = {
     }
 }
 module.exports = {
-    weatherSchema: WeatherSchema,
-    weatherResolver: WeatherResolvers
+    schema: WeatherSchema,
+    resolvers: WeatherResolvers
 };

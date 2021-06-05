@@ -41,6 +41,6 @@ const UserResolver = {
     }
 }
 module.exports = {
-    userSchema: UserSchema,
-    userResolver: UserResolver
+    schema: UserSchema,
+    resolvers: UserResolver
 };

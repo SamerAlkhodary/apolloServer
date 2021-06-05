@@ -1,5 +1,4 @@
 const { RESTDataSource } = require('apollo-datasource-rest');
-
 const users=
     [
         {
@@ -35,7 +34,6 @@ class UserSource extends RESTDataSource {
     async getUsers() {
         return {users};
     }
-
 
 }
 module.exports = UserSource;

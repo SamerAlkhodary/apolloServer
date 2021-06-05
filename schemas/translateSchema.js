@@ -28,6 +28,6 @@ const TranslateResolvers = {
     }
 }
 module.exports = {
-    translateSchema: TranslateSchema,
-    translateResolver: TranslateResolvers
+    schema: TranslateSchema,
+    resolvers: TranslateResolvers
 };
