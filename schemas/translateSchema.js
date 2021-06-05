@@ -23,7 +23,7 @@ const TranslateResolvers = {
         },
 
     },
-    mutation: {
+    Mutation: {
 
     }
 }

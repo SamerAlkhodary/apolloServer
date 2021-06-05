@@ -1,6 +1,7 @@
 const dataSources = require('./dataSources');
 const schemas = require('./schemas');
 const { ApolloServer, gql } = require('apollo-server');
+const plugins = require('./plugins');
 const typeDefs = gql`
 
   ${schemas.weather.schema.types}
@@ -37,11 +38,14 @@ const resolvers = {
     schemas.user.resolvers.Mutation
   )
 }
+
+
 const server = new ApolloServer({ 
   typeDefs,
   resolvers,
   dataSources,
-  context
+  context,
+  plugins
  });
 
 server.listen().then(({ url }) => {
