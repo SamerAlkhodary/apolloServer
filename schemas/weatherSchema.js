@@ -38,7 +38,7 @@ const WeatherResolvers = {
             return dataSources.weatherSource.getCoords(lat, lon);
         }
     },
-    mutation: {
+    Mutation: {
 
     }
 }
