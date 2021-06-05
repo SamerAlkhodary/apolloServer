@@ -17,7 +17,8 @@ const TranslateSchema = {
 }
 const TranslateResolvers = {
     Query: {
-        translate: (_, { text, from, to }, { dataSources }) => {
+        translate: (_, { text, from, to }, { dataSources,header }) => {
+            console.log(header);
             return dataSources.translateSource.translate(text, from, to);
         },
 

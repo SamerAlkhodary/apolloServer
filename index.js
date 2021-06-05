@@ -13,6 +13,7 @@ const typeDefs = gql`
 
   }
 `;
+const context=({req})=>{ return {header:req.headers}};
 
 const resolvers = {
 
@@ -22,7 +23,12 @@ const resolvers = {
       schemas.translate.translateResolver.Query
     )
 }
-const server = new ApolloServer({ typeDefs, resolvers, dataSources });
+const server = new ApolloServer({ 
+  typeDefs,
+  resolvers,
+  dataSources,
+  context
+ });
 
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
