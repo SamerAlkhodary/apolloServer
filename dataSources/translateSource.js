@@ -1,6 +1,6 @@
 const  {RESTDataSource} =require('apollo-datasource-rest');
 const qs = require('qs');
-const API_KEY = process.env.x_rapidapi_key;
+const API_KEY = process.env.TRANSLATE_KEY;
 const API_URL = 'https://google-translate1.p.rapidapi.com/language/translate';
 
  class TranslateAPI extends RESTDataSource{

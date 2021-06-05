@@ -6,13 +6,15 @@ const typeDefs = gql`
   ${schemas.weather.weatherSchema.types}
   ${schemas.translate.translateSchema.types}
   ${schemas.user.userSchema.types}
+  ${schemas.mix.mixSchema.types}
+
 
   type Query {
 
     ${schemas.weather.weatherSchema.queries}
     ${schemas.translate.translateSchema.queries}
     ${schemas.user.userSchema.queries}
-
+    ${schemas.mix.mixSchema.queries}
   }
   type Mutation {
 
@@ -27,7 +29,8 @@ const resolvers = {
     Object.assign(
       schemas.weather.weatherResolver.Query,
       schemas.translate.translateResolver.Query,
-      schemas.user.userResolver.Query
+      schemas.user.userResolver.Query,
+      schemas.mix.mixResolver.Query,
     ),
   Mutation: 
   Object.assign(
