@@ -27,7 +27,7 @@ const LogginPlugin =
               } else {
                 res = result
               }
-              console.log(` ${formatted_date} ${info.parentType.name}.${info.fieldName} ${args} ${res} ${end - start}ns`);
+              console.log(` ${formatted_date} ${info.parentType.name}.${info.fieldName} ${JSON.stringify(args)} ${JSON.stringify(res)} ${end - start}ns`);
 
             };
           }
